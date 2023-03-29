@@ -1,0 +1,27 @@
+# Maven target directory
+target/
+
+# IntelliJ IDEA files and directories
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Compiled Java class files
+*.class
+
+# Log files
+*.log
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Maven wrapper files
+.mvn/wrapper/
+
+# Eclipse files
+.settings/
+
+# Gradle files (if applicable)
+.gradle/

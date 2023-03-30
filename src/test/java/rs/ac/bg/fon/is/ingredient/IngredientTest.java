@@ -2,7 +2,7 @@ package rs.ac.bg.fon.is.ingredient;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class IngredientTest {
 
@@ -47,5 +47,23 @@ public class IngredientTest {
         Ingredient ingredient = new LiquidIngredient("Oil", 50);
         ingredient.use(120);
         assertEquals(50, ingredient.getQuantity(), 0.0);
+    }
+
+    @Test
+    public void testDoIHaveEnough() {
+        Ingredient ingredient = new SolidIngredient("flour", 500);
+        assertTrue(ingredient.doIHave(450));
+    }
+
+    @Test
+    public void testDoIHaveNotEnough() {
+        Ingredient ingredient = new SolidIngredient("flour", 500);
+        assertFalse(ingredient.doIHave(502));
+    }
+
+    @Test
+    public void testDoIHaveBarely() {
+        Ingredient ingredient = new SolidIngredient("flour", 500);
+        assertTrue(ingredient.doIHave(500));
     }
 }

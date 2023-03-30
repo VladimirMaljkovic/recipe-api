@@ -89,4 +89,17 @@ public abstract class Ingredient {
         }
         setQuantity(getQuantity() - amount);
     }
+
+    /**
+     * Checks if there is enough quantity of ingredient
+     *
+     * @param amount  Amount of ingredient needed
+     * @return <b>true</b> if there is enough of given ingredient, else returns <b>false</b>
+     */
+    public boolean doIHave(double amount) {
+        if (amount > getQuantity()){
+            return false;
+        }
+        return true;
+    }
 }

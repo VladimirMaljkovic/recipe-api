@@ -1,0 +1,38 @@
+{
+    "name": "Cosmopolitan",
+    "type": "COCKTAIL",
+    "short_desc": "Vodka-based fruity cocktail",
+    "ingredients": [
+        {
+            "name": "Vodka",
+            "type": "liquid",
+            "quantity": 45
+        },
+        {
+            "name": "Cranberry juice",
+            "type": "liquid",
+            "quantity": 30
+        },
+        {
+            "name": "Triple sec",
+            "type": "liquid",
+            "quantity": 15
+        },
+        {
+            "name": "Lime juice",
+            "type": "liquid",
+            "quantity": 15
+        },
+        {
+            "name": "Ice",
+            "type": "solid",
+            "quantity": 100
+        },
+        {
+            "name": "Lime twist",
+            "type": "countable",
+            "quantity": 1
+        }
+    ],
+    "detailed_desc": "Fill a cocktail shaker with ice.\nAdd vodka, cranberry juice, triple sec, and lime juice to the shaker.\nShake the mixture vigorously for about 10-15 seconds until well chilled.\nStrain the mixture into a martini glass.\nGarnish with a lime twist.\nServe and enjoy!\n"
+}

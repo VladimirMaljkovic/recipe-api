@@ -22,7 +22,7 @@ public class RecipeTest {
     Ingredient lemon_wedge = new CountableIngredient("Lemon wedge", 1);
     Ingredient maraschino_cherry = new CountableIngredient("Maraschino cherry", 1);
     Ingredient ice = new SolidIngredient("ice", 100);
-    Recipe amaretto_sour = new Recipe("Amaretto sour", RecipeType.COCKTAIL, "Sweet and sour cocktail", new ArrayList<Ingredient>(Arrays.asList(amaretto, lemon_juice, syrup, egg_white, ice, lemon_wedge, maraschino_cherry)), "Fill a cocktail shaker with ice.\n" +
+    Recipe amaretto_sour = new Recipe("Amaretto sour", "COCKTAIL", "Sweet and sour cocktail", new ArrayList<Ingredient>(Arrays.asList(amaretto, lemon_juice, syrup, egg_white, ice, lemon_wedge, maraschino_cherry)), "Fill a cocktail shaker with ice.\n" +
             "Add Amaretto liqueur, fresh lemon juice, simple syrup, and egg white to the shaker.\n" +
             "Shake the mixture vigorously for about 10-15 seconds until well chilled and frothy.\n" +
             "Strain the mixture into a rocks glass filled with ice.\n" +
@@ -42,13 +42,13 @@ public class RecipeTest {
 
     @Test
     public void testRecipeType1() {
-        assertEquals(RecipeType.COCKTAIL, amaretto_sour.getType());
+        assertEquals("COCKTAIL", amaretto_sour.getType());
     }
 
     @Test
     public void testRecipeType2() {
-        amaretto_sour.setType(RecipeType.DISH);
-        assertEquals(RecipeType.DISH, amaretto_sour.getType());
+        amaretto_sour.setType("DISH");
+        assertEquals("DISH", amaretto_sour.getType());
     }
 
     @Test

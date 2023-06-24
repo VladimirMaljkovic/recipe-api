@@ -1,7 +1,6 @@
 package rs.ac.bg.fon.is.ingredient;
 
 import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
 
 public class CountableIngredientTest {

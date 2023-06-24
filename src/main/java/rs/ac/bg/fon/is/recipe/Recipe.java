@@ -19,7 +19,7 @@ public class Recipe {
     /**
      * The type of the recipe (cocktail, soup...)
      */
-    private RecipeType type;
+    private String type;
     /**
      * The short description of the recipe
      */
@@ -42,7 +42,7 @@ public class Recipe {
      * @param detailed_desc detailed description of the recipe
      */
 
-    public Recipe(String name, RecipeType type, String short_desc, List<Ingredient> ingredients, String detailed_desc) {
+    public Recipe(String name, String type, String short_desc, List<Ingredient> ingredients, String detailed_desc) {
         this.name = name;
         this.type = type;
         this.short_desc = short_desc;

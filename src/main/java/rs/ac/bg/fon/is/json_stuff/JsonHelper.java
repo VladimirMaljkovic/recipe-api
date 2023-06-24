@@ -4,8 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import rs.ac.bg.fon.is.ingredient.Ingredient;
-import rs.ac.bg.fon.is.ingredient.IngredientFactory;
+import rs.ac.bg.fon.is.ingredient.*;
 import rs.ac.bg.fon.is.recipe.Recipe;
 
 import java.io.File;
@@ -70,8 +69,36 @@ public class JsonHelper {
         return new Recipe(recipeName, recipeType, shortDesc, ingredients, detailedDesc);
     }
 
-    public JsonObject saveJson(Recipe recipe) {
-        return null;
+    public void saveJson(Recipe recipe) throws Exception{
+        JsonObject recipeJson = new JsonObject();
+        recipeJson.addProperty("name", recipe.getName());
+        recipeJson.addProperty("type", recipe.getType());
+        recipeJson.addProperty("short_desc", recipe.getShort_desc());
+        recipeJson.addProperty("detailed_desc", recipe.getDetailed_desc());
+
+        JsonArray ingredientsJson = new JsonArray();
+
+        for(Ingredient ingredient: recipe.getIngredients()) {
+            JsonObject ingredientJson = new JsonObject();
+            ingredientJson.addProperty("name", ingredient.getName());
+            ingredientJson.addProperty("quantity", ingredient.getQuantity());
+            if(ingredient.getClass() == CountableIngredient.class) {
+                ingredientJson.addProperty("type", "countable");
+            }
+            else if(ingredient.getClass() == LiquidIngredient.class) {
+                ingredientJson.addProperty("type", "liquid");
+            }
+            else if(ingredient.getClass() == SolidIngredient.class) {
+                ingredientJson.addProperty("type", "solid");
+            }
+            else
+                throw new Exception("Illegal ingredient type");
+            ingredientsJson.add(ingredientJson);
+        }
+        recipeJson.add("ingredients", ingredientsJson);
+
+        System.out.println(recipeJson);
+
     }
 
 }

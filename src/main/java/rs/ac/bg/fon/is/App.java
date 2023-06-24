@@ -12,8 +12,7 @@ import java.io.File;
 
 public class App
 {
-    public static void main( String[] args )
-    {
+    public static void main( String[] args ) throws Exception {
 
 //        Ingredient vodka = new LiquidIngredient("vodka", 200);
 //        Ingredient syrup = new LiquidIngredient("Simple syrup", 15);
@@ -43,9 +42,8 @@ public class App
         JsonObject recipeJson = jsonHelper.loadJson(file);
 
         Recipe amarettoSour = jsonHelper.loadRecipeFromJson(recipeJson);
-        System.out.println(amarettoSour);
 
-
+        jsonHelper.saveJson(amarettoSour);
 
 
     }

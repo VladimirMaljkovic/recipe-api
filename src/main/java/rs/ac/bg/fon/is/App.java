@@ -44,10 +44,15 @@ public class App
 
         Recipe amarettoSour = jsonHelper.loadRecipeFromJson(recipeJson);
 
-        jsonHelper.saveJson(amarettoSour);
+        jsonHelper.saveJson(amarettoSour);  //TODO actually add saving to file
 
-        APIServer apiServer = new APIServer();
-        apiServer.runServer();
+        APIServer.getInstance().runServer();
+
+//        String path = "/12346/recipes/recipe1";
+//        String[] parts = path.split("/", 3);
+//        System.out.println(parts[0]); // empty
+//        System.out.println(parts[1]); // id
+//        System.out.println(parts[2]); // rest of path
 
     }
 }

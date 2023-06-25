@@ -37,10 +37,12 @@ public class RootHandler implements HttpHandler {
                 OutputStream outputStream = exchange.getResponseBody();
                 outputStream.write(htmlContent);
                 outputStream.close();
+                exchange.close(); //?
             } else {
                 // If the file doesn't exist, return a 404 error
                 System.out.println("File doesn't exist");
                 exchange.sendResponseHeaders(404, -1);
+                exchange.close(); //?
             }
         }
         else {
@@ -49,6 +51,7 @@ public class RootHandler implements HttpHandler {
             OutputStream outputStream = exchange.getResponseBody();
             outputStream.write(response.getBytes(StandardCharsets.UTF_8));
             outputStream.close();
+            exchange.close(); //?
         }
     }
 }

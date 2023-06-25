@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Recipe api</title>
+
+
+</head>
+
+<body>
+    <h1>Welcome</h1>
+    <p>This is a server app to help you manage your ingredients and recipes and make the best use of what you have :)</p>
+    <p>The API creates your own session when you call</p>
+    <ul>
+        <li>/new #POST<br>
+            This will return a session ID you need to use to interact with the API</li>
+    </ul>
+    <p>Example:</p>
+    <ul>
+        <li>/738123/recipes#GET  (returns all recipes and their basic information)</li>
+        <li>/738123/recipes/pasta-carbonara#GET (returns details for pasta carbonara recipe)</li>
+        <li>/738123/suggest-recipe#POST  (returns recipes and their basic information based on ingredients you have)</li>
+        <li>/738123/my-ingredients#POST (updates your available ingredients)</li>
+    </ul>
+    <br><br>
+    <p>Use this format to send the ingredients you have:<br>
+        <pre><code>
+        {
+            "ingredients": [
+                {
+                    "name": "Amaretto liqueur",
+                    "type": "liquid",
+                    "quantity": 60
+                },
+                {
+                    "name": "Lemon juice",
+                    "type": "liquid",
+                    "quantity": 30
+                },
+                {
+                    "name": "Simple syrup",
+                    "type": "liquid",
+                    "quantity": 15
+                },
+                {
+                    "name": "Egg white",
+                    "type": "countable",
+                    "quantity": 1
+                },
+                {
+                    "name": "Ice",
+                    "type": "solid",
+                    "quantity": 100
+                },
+                {
+                    "name": "Lemon wedge",
+                    "type": "countable",
+                    "quantity": 1
+                },
+                {
+                    "name": "Maraschino cherry",
+                    "type": "countable",
+                    "quantity": 1
+                }
+            ]
+        }
+    </code></pre>
+    </p>
+</body>
+
+</html>

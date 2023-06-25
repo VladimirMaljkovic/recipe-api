@@ -2,7 +2,7 @@
 This is a server app to help you manage your ingredients and recipes and make the best use of what you have :)
 
 The API creates your own session when you call
-* /new
+* /new #POST<br>
 This will return a session ID you need to use to interact with the API
 
 Example:

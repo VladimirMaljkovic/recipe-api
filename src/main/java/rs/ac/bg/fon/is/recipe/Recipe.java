@@ -41,7 +41,6 @@ public class Recipe {
      * @param ingredients list of ingredients needed for the rcipe
      * @param detailed_desc detailed description of the recipe
      */
-
     public Recipe(String name, String type, String short_desc, List<Ingredient> ingredients, String detailed_desc) {
         this.name = name;
         this.type = type;

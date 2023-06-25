@@ -6,6 +6,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import rs.ac.bg.fon.is.json_stuff.JsonHelper;
 import rs.ac.bg.fon.is.recipe.Recipe;
+import rs.ac.bg.fon.is.server.APIServer;
 
 import java.io.File;
 
@@ -45,6 +46,8 @@ public class App
 
         jsonHelper.saveJson(amarettoSour);
 
+        APIServer apiServer = new APIServer();
+        apiServer.runServer();
 
     }
 }
